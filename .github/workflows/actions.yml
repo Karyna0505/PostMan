@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: matt-ball/newman-action@v5
-        with:
-          apiKey: ${{ secrets.POSTMANACTIONS }}
-          collection: petstore.collection.json
-          envVar: '[{ "key": "baseUrl", "value": "http://petstore.swagger.io/v2","type": "string" }]'
       
       # INstall Node on the runner
       - name: Install Node
@@ -27,6 +22,12 @@ jobs:
         run: |
           npm install -g newman
           npm install -g newman-reporter-htmlextra
+          
+      - uses: matt-ball/newman-action@master
+        with:
+          apiKey: ${{ secrets.POSTMANACTIONS }}
+          collection: petstore.collection.json
+          envVar: '[{ "key": "baseUrl", "value": "http://petstore.swagger.io/v2","type": "string" }]'
       
       # Make directory to upload the test results
       - name: Make Directory for results
