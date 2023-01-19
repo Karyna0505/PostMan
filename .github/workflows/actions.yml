@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: matt-ball/newman-action@master
+        with:
+          apiKey: ${{ secrets.POSTMANACTIONS }}
+          collection: petstore.collection.json
+          environment: 4a0f5191-a707-404b-9e37-a6711475a264
       
       # INstall Node on the runner
       - name: Install Node
