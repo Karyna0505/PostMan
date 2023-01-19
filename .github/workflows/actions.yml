@@ -25,7 +25,7 @@ jobs:
           
       - uses: matt-ball/newman-action@master
         with:
-          apiKey: ${{ secrets.POSTMANACTIONS }}
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
           collection: petstore.collection.json
           envVar: '[{ "key": "baseUrl", "value": "http://petstore.swagger.io/v2","type": "string" }]'
       
