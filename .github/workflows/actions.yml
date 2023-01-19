@@ -10,6 +10,8 @@ jobs:
   test-api:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      
       # INstall Node on the runner
       - name: Install Node
         uses: actions/setup-node@v1
