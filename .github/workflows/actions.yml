@@ -14,6 +14,7 @@ jobs:
         with:
           apiKey: ${{ secrets.POSTMANACTIONS }}
           collection: petstore.collection.json
+          envVar: '[{ "key": "baseUrl", "value": "http://petstore.swagger.io/v2","type": "string" }]'
       
       # INstall Node on the runner
       - name: Install Node
