@@ -9,8 +9,8 @@ jobs:
   test-api:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: matt-ball/newman-action@master
+      - uses: actions/checkout@v2
+      - uses: matt-ball/newman-action@v5
         with:
           apiKey: ${{ secrets.POSTMANACTIONS }}
           collection: petstore.collection.json
